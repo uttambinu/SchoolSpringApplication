@@ -8,5 +8,11 @@ public enum Gender {
     private String code;
 
     Gender(String code) {
+        this.code = code;
     }
+
+    public String getCode() {
+        return code;
+    }
+
 }
