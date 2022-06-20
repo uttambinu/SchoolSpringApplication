@@ -1,5 +1,6 @@
 package com.school.schoolDemo.entity;
 
+import com.school.schoolDemo.entity.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class Student {
     private String name;
     private Integer age;
     private LocalDate dob;
-    private String gender;
+    private Gender gender;
 
 }
 

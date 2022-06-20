@@ -1,9 +1,11 @@
 package com.school.schoolDemo.service;
 
 import com.school.schoolDemo.entity.Student;
+import com.school.schoolDemo.entity.enums.Gender;
 import com.school.schoolDemo.exceptions.ResourceNotFoundException;
 import com.school.schoolDemo.payload.StudentDTO;
 import com.school.schoolDemo.repository.StudentRepository;
+import com.school.schoolDemo.utils.StringToEnums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +26,7 @@ public class StudentService {
         student.setName(studentDTO.getName());
         student.setDob(dateFormat(studentDTO.getDob()));
         student.setAge(calculateAge(dateFormat(studentDTO.getDob())));
-        student.setGender(studentDTO.getGender());
+        student.setGender(StringToEnums.stringToGender(studentDTO.getGender()));
 
         return studentRepository.save(student);
 
@@ -47,7 +49,7 @@ public class StudentService {
             student.setName(studentDTO.getName());
             student.setDob(dateFormat(studentDTO.getDob()));
             student.setAge(calculateAge(dateFormat(studentDTO.getDob())));
-            student.setGender(studentDTO.getGender());
+            student.setGender(StringToEnums.stringToGender(studentDTO.getGender()));
 
             return studentRepository.save(student);
         }
