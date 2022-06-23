@@ -5,12 +5,25 @@ import com.school.schoolDemo.entity.enums.Gender;
 public class StringToEnums {
 
     public static Gender stringToGender(String value){
-        switch (value){
-            case "male": return Gender.MALE;
+        switch (value.toLowerCase()){
+            case "male":
 
-            case "female": return Gender.FEMALE;
+            case "0":
 
-            case "others": return Gender.OTHERS;
+            case "m":
+                return Gender.MALE;
+
+            case "female":
+
+            case "1":
+
+            case "f":
+                return Gender.FEMALE;
+
+            case "others":
+
+            case "o":
+                return Gender.OTHERS;
 
             default: throw new AssertionError("Unknown Gender " + value);
         }
